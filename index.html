@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Интерактивная таблица с графиками</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="highcharts.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div id="chart-container" class="chart"></div>
+
+		<div class="data-table-container">
+			<table id="data-table" class="data-table">
+				<thead>
+					<tr>
+						<th class="data-table__header">Показатель</th>
+						<th class="data-table__header">Текущий день</th>
+						<th class="data-table__header">Вчера</th>
+						<th class="data-table__header">Этот день недели</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="data-table__row" data-indicator="revenue"
+						data-chart-data="[450000, 460000, 470000, 480000, 490000, 480521, 500521]">
+						<td class="data-table__cell">Выручка, руб</td>
+						<td class="data-table__cell">500 521</td>
+						<td class="data-table__cell data-table__cell--positive">
+							<span class="data-table__value">480 521</span>
+							<span class="data-table__change data-table__change--positive">+4%</span>
+						</td>
+						<td class="data-table__cell data-table__cell--negative">4 805 121</td>
+					</tr>
+					<tr class="data-table__row" data-indicator="cash"
+						data-chart-data="[300000, 300000, 300000, 300000, 300000, 300000, 300000]">
+						<td class="data-table__cell">Наличные</td>
+						<td class="data-table__cell">300 000</td>
+						<td class="data-table__cell">
+							<span class="data-table__value">300 000</span>
+							<span class="data-table__change data-table__change--neutral">0%</span>
+						</td>
+						<td class="data-table__cell">300 000</td>
+					</tr>
+					<tr class="data-table__row" data-indicator="bank-transfer"
+						data-chart-data="[100000, 100000, 100000, 100000, 100000, 100000, 100000]">
+						<td class="data-table__cell">Безналичный расчет</td>
+						<td class="data-table__cell">100 000</td>
+						<td class="data-table__cell">
+							<span class="data-table__value">100 000</span>
+							<span class="data-table__change data-table__change--neutral">0%</span>
+						</td>
+						<td class="data-table__cell">100 000</td>
+					</tr>
+					<tr class="data-table__row" data-indicator="credit-cards"
+						data-chart-data="[100521, 100521, 100521, 100521, 100521, 100521, 100521]">
+						<td class="data-table__cell">Кредитные карты</td>
+						<td class="data-table__cell">100 521</td>
+						<td class="data-table__cell">
+							<span class="data-table__value">100 521</span>
+							<span class="data-table__change data-table__change--neutral">0%</span>
+						</td>
+						<td class="data-table__cell">100 521</td>
+					</tr>
+					<tr class="data-table__row" data-indicator="avg-check"
+						data-chart-data="[900, 950, 1000, 1100, 1200, 900, 1300]">
+						<td class="data-table__cell">Средний чек, руб</td>
+						<td class="data-table__cell">1 300</td>
+						<td class="data-table__cell data-table__cell--positive">
+							<span class="data-table__value">900</span>
+							<span class="data-table__change data-table__change--positive">+44%</span>
+						</td>
+						<td class="data-table__cell data-table__cell--positive">900</td>
+					</tr>
+					<tr class="data-table__row" data-indicator="avg-guest"
+						data-chart-data="[800, 850, 900, 1000, 1100, 800, 1200]">
+						<td class="data-table__cell">Средний гость, руб</td>
+						<td class="data-table__cell">1 200</td>
+						<td class="data-table__cell data-table__cell--positive">
+							<span class="data-table__value">800</span>
+							<span class="data-table__change data-table__change--positive">+50%</span>
+						</td>
+						<td class="data-table__cell data-table__cell--positive">800</td>
+					</tr>
+					<tr class="data-table__row" data-indicator="removals-after"
+						data-chart-data="[1100, 1050, 1000, 950, 1000, 1100, 1000]">
+						<td class="data-table__cell">Удаления из чека (после оплаты), руб</td>
+						<td class="data-table__cell">1 000</td>
+						<td class="data-table__cell data-table__cell--negative">
+							<span class="data-table__value">1 100</span>
+							<span class="data-table__change data-table__change--negative">-9%</span>
+						</td>
+						<td class="data-table__cell data-table__cell--positive">900</td>
+					</tr>
+					<tr class="data-table__row" data-indicator="removals-before"
+						data-chart-data="[1300, 1300, 1300, 1300, 1300, 1300, 1300]">
+						<td class="data-table__cell">Удаления из чека (до оплаты), руб</td>
+						<td class="data-table__cell">1 300</td>
+						<td class="data-table__cell">
+							<span class="data-table__value">1 300</span>
+							<span class="data-table__change data-table__change--neutral">0%</span>
+						</td>
+						<td class="data-table__cell data-table__cell--positive">900</td>
+					</tr>
+					<tr class="data-table__row" data-indicator="checks-count" data-chart-data="[36, 35, 34, 35, 36, 36, 34]">
+						<td class="data-table__cell">Количество чеков</td>
+						<td class="data-table__cell">34</td>
+						<td class="data-table__cell data-table__cell--negative">
+							<span class="data-table__value">36</span>
+							<span class="data-table__change data-table__change--negative">-6%</span>
+						</td>
+						<td class="data-table__cell">34</td>
+					</tr>
+					<tr class="data-table__row" data-indicator="guests-count" data-chart-data="[36, 35, 34, 35, 36, 36, 34]">
+						<td class="data-table__cell">Количество гостей</td>
+						<td class="data-table__cell">34</td>
+						<td class="data-table__cell data-table__cell--negative">
+							<span class="data-table__value">36</span>
+							<span class="data-table__change data-table__change--negative">-6%</span>
+						</td>
+						<td class="data-table__cell data-table__cell--positive">32</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
