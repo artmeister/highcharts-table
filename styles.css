@@ -101,14 +101,6 @@ h1 {
 .data-table__cell:nth-child(3),
 .data-table__cell:nth-child(4) {
 	text-align: right;
-	font-variant-numeric: tabular-nums;
-}
-
-.data-table__cell:nth-child(3) {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	gap: 8px;
 }
 
 .data-table__value {
